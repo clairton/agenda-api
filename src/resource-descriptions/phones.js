@@ -1,5 +1,5 @@
 module.exports = {
   urlTemplates: {
-    self: '/people/{id}'
+    self: '/phones/{id}'
   }
 }

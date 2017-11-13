@@ -1,5 +1,5 @@
-# json-api-example
-An example API created with my JSON-API library (http://github.com/ethanresnick/json-api)
+# agenda-api
+An API created with my JSON-API with library (http://github.com/ethanresnick/json-api) and based on https://github.com/ethanresnick/json-api-example for a book about Ember.js by Casa do Código.
 
 # Try it out
 
@@ -10,7 +10,5 @@ An example API created with my JSON-API library (http://github.com/ethanresnick/
 5. Try out the following (for example):
   - `GET http://localhost:3000/` to view the auto-generated documentation
   - `GET http://localhost:3000/people` to view the people collection
-  - `POST http://localhost:3000/schools` to add a school
-  - `GET http://localhost:3000/organizations` to view the organizations collection, which includes all schools too
+  - `POST http://localhost:3000/phones` to add a phone
   - `GET http://localhost:3000/people/{id}` to view a person, after it's been created
-  - `GET`, `POST`, or `PATCH` `http://localhost:3000/organizations/{id}/relationships/liaisons` to view or modify an organization's `liaisons` relationship

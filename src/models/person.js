@@ -1,15 +1,14 @@
 'use strict';
 var mongoose   = require('mongoose')
-  , ObjectId   = mongoose.Schema.Types.ObjectId;
 
 var schema = mongoose.Schema({
-  name: String,
-  email: {type: String, lowercase: true},
-  parent: {ref:'Person', type: ObjectId},
-  gender: {
+  firtName: {
     type: String,
-    enum: ['male', 'female', 'other']
-  }
+    required: true
+  },
+  lastName: String,
+  birthdate: Date,
+  phones: {ref:'Phone', type: mongoose.Schema.Types.ObjectId},
 });
 
 module.exports = mongoose.model('Person', schema);
