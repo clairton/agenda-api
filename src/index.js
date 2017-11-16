@@ -47,5 +47,29 @@ app.use(function(req, res, next) {
   Front.sendError(new APIError(404, undefined, 'Not Found'), req, res);
 });
 
+
+
+models.Person.find({}).exec(function (err, people) {
+  if (people.length === 0) {
+    console.log('Seeding database sample');
+
+    var faker = require('faker');
+    faker.locale = 'pt_BR';
+
+    models.Person.create({
+      firstName: faker.name.firstName(),
+      lastName: faker.name.lastName(),
+      birthdate: faker.date.past()
+    }).then(person => {
+      console.log(`Success created person ${person}!!`);
+      models.Phone.create({
+        prefix: 49,
+        number: 333333333,
+        person: person
+      }).then((phone) => console.log(`Success created phone ${phone}!!`));
+    });
+  }
+});
+
 console.log(`Starting up! Visit ${process.env.HOST}:${process.env.PORT} to see the docs.`);
 app.listen(process.env.PORT);
