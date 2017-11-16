@@ -1,11 +1,14 @@
 'use strict';
+
+require('dotenv').config();
+
 var path     = require('path')
   , express  = require('express')
   , API      = require('json-api')
   , APIError = API.types.Error
   , mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/example');
+mongoose.connect(process.env.MONGODB_URI);
 
 var models = {
   Person: require('./models/person'),
@@ -44,5 +47,5 @@ app.use(function(req, res, next) {
   Front.sendError(new APIError(404, undefined, 'Not Found'), req, res);
 });
 
-console.log('Starting up! Visit 127.0.0.1:3000 to see the docs.');
-app.listen(3000);
+console.log(`Starting up! Visit ${process.env.HOST}:${process.env.PORT} to see the docs.`);
+app.listen(process.env.PORT);

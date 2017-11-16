@@ -1,21 +1,32 @@
 {
   "name": "agenda-api",
   "version": "1.0.0",
+  "description": "A json-api test",
+  "homepage": "https://github.com/clairton/agenda-api",
+  "bugs": "https://github.com/clairton/agenda-api/issues",
+  "license": "Creative Commons",
   "private": true,
   "main": "src/index.js",
+  "author": "Clairton Rodrigo Heinzen",
+  "email": "clairton.rodrigo@gmail.com",
+  "repository": "https://github.com/clairton/agenda-api",
   "engines": {
     "node": ">=0.10.0"
+  },
+  "scripts": {
+    "start": "node src/index.js"
   },
   "dependencies": {
     "body-parser": "^1.3.1",
     "confit": "^1.1.2",
+    "dotenv": "^4.0.0",
     "express": "~4.4.x",
     "express-session": "^1.3.1",
     "express-simple-firewall": "1.0.x",
     "express-simple-router": "0.0.x",
     "json-api": "2.x.x",
-    "path-to-regexp": "0.1.2",
     "mongoose": "4.0.x",
+    "path-to-regexp": "0.1.2",
     "pluralize": "0.0.10",
     "q": "^1.0.1"
   }
